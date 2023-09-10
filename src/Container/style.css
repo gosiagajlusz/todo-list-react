@@ -1,0 +1,7 @@
+.container{
+max-width: 900px;
+padding:20px;
+margin:0 auto;
+background-color: hsla(0, 0%, 90%, 0.92);
+}
+

@@ -1,0 +1,28 @@
+/* .buttons {
+    padding:0px;
+    display:flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+} */
+
+.buttons__button {
+    border: none;
+    padding: 5px 5px;
+   min-height: 30px;  
+   margin: 5px 10px 5px 10px; 
+    transition: color 0.5s 0.5s linear;
+    background-color: transparent;
+    color: teal;
+    font-size:18px;
+    
+}
+
+.buttons__button:disabled{
+    color:grey;
+}
+
+
+.buttons__button:hover {
+    color: rgb(116, 186, 186);
+
+}

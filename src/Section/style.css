@@ -1,0 +1,21 @@
+.section {
+    background-color: hsl(0, 0%, 100%);
+    border: none;
+    display: grid;
+    margin: 10px 0px;
+    box-shadow: 5px rgb(185, 183, 183);
+}
+
+.section__header {
+    font-size: 20px;
+    padding: 20px;
+    margin: 0;
+    border-bottom: 1px solid #ddd;
+
+}
+
+;
+
+.section__body {
+    padding: 20px;
+}

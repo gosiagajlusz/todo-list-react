@@ -1,0 +1,127 @@
+.form {
+    background-color: white;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-gap: 20px;
+}
+
+.form__header {
+    border: none;
+    display: flex;
+
+}
+
+
+/* .form__fieldsetInput {
+    background-color: #ffffff;
+    border: none;
+    margin: 1px;
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 5px rgb(185, 183, 183);
+
+} */
+
+/* .form__input {
+    flex-grow: 3;
+    flex-basis:100%;
+}
+
+.form__fieldsetTitle {
+    background-color: hsl(0, 0%, 100%);
+    border: none;
+    display: flex;
+    margin: 5px 1px 1px 1px;
+    padding-left: 15px;
+    box-shadow: 5px rgb(185, 183, 183);
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+} */
+
+
+/* .form__fieldsetLabel {
+    background-color: hsl(0, 0%, 100%);
+    border: none;
+    font-weight: bold;
+    font-size: 20px;
+    padding-left: 15px;
+    padding-bottom: 0;
+    padding-top: 0;
+    display: flex;
+    flex-direction: row;
+    margin: 1px;
+    box-shadow: 5px rgb(185, 183, 183);
+
+} */
+
+
+
+.form__addTaskButton {
+    background-color: teal;
+    color: white;
+    padding: 10px;
+    border: none;
+    transition: 1s;
+    flex-basis: 100%;
+}
+
+.form__addTaskButton:hover {
+    background-color: rgb(98, 154, 154);
+    transform: scale(1.15);
+}
+
+.form__input {
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+
+
+/* .form__paragraph {
+    font-weight: bold;
+    font-size: 25px;
+    display: flex;
+    align-self:flex-start;
+
+} */
+
+
+@media (max-width: 897px) {
+    .form {
+        grid-template-columns: 1fr;
+    }
+
+
+
+    /* .form__fieldsetInput {
+        flex-direction: column;
+        justify-content: space-between;
+        
+    } */
+
+    /* .form__fieldsetTitle {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items:center;
+    } */
+
+
+
+    /* .form__paragraph {
+        margin: 0px;
+        padding: 0px;
+    } */
+
+
+}
+
+@media (max-width: 767px) {
+    .form {
+        min-width: 90%;
+    }
+}
+
+;
