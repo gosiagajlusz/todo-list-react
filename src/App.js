@@ -16,7 +16,7 @@ const hideDoneTasks = false;
 function App() {
   return (
     <Container>
-    <main className="container">
+    <main className="main">
       <Header title="Lista zadań"/>
       
 
