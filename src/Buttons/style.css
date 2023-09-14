@@ -1,5 +1,13 @@
 
-.section__headerButtons {
+.section__headerButtons{
+    display:grid;
+    padding: 0 10 px;
+    
+
+}
+
+
+.section__headerButtons__button {
     align-items: center;    
     background-color: transparent;
     border: 0 transparent;
@@ -11,35 +19,25 @@
     transition: .5s;
 }
 
-
-
-/* .buttons__button {
-    border: none;
-    padding: 5px 5px;
-   min-height: 30px;  
-   margin: 5px 10px 5px 10px; 
-    transition: color 0.5s 0.5s linear;
-    background-color: transparent;
-    color: teal;
-    font-size:18px;
-    
-} */
-
-.section__headerButtons:disabled{
+.section__headerButtons__button:disabled{
     color:grey;
 }
 
-
-.section__headerButtons:hover {
+.section__headerButtons__button:hover {
     color: rgb(116, 186, 186);
 
 }
 
 @media (max-width: 767px){
+
+
+
 .section__headerButtons {
     grid-gap: 15px;
     display: grid;
-    gap: 15px;
+    grid-gap: 15px;
     grid-template-columns: 1fr;
     padding: 5px;
-}};
+}
+
+};
