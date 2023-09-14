@@ -2,7 +2,7 @@
 .section__headerButtons{
     display:grid;
     padding: 0 10 px;
-    
+    grid-template-columns: 1fr auto;
 
 }
 
