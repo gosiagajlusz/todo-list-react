@@ -1,8 +1,16 @@
 
 .tasks {
-    list-style: none;
-    padding:20px;
+    list-style: none;      
+        background-color: white;
+        padding: 20px;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-gap: 20px;
+        /* align-items:center; */
+
 }
+
+
 
 .tasks__item {
         display: grid;
@@ -55,3 +63,8 @@
     .tasks__hidden {
         display:none;
     }
+
+    @media (max-width: 897px) {
+        .tasks {
+            grid-template-columns: 1fr;
+        }};
