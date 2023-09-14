@@ -5,7 +5,7 @@ const Buttons = ({ tasks, hideDoneTasks }) => (
 
   <div className="buttons__headerButtons">
     {tasks.length > 0 && (<>
-      <button className={`buttons__headerButtons__button`}>
+      <button className={"buttons__headerButtons__button"}>
         {hideDoneTasks ? "Pokaż" : "Ukryj"} ukończone
       </button>
       <button className=

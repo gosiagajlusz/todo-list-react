@@ -35,10 +35,3 @@
     .section__form {
         grid-template-columns: 1fr;
     }};
-
-/* @media (max-width: 767px) {
-    .section__form {
-        min-width: 90%;
-    }
-}
-; */
