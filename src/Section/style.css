@@ -7,14 +7,30 @@
 }
 
 .section__header {
-    font-size: 20px;
     padding: 20px;
     margin: 0;
     border-bottom: 1px solid #ddd;
+    display: grid;
+    grid-gap: 20px;
+    align-items: center;
+    grid-template-columns: auto auto;
+    justify-content: space-between;
+    
 }
 
-;
+
 
 .section__body {
     padding: 20px;
-}
+    grid-gap: 20px;
+    display: grid;
+    gap: 20px;
+    grid-template-columns: 1fr auto;
+    
+};
+
+@media (max-width: 767px){
+.section__header {
+    gap: 10px;
+    grid-template-columns: 1fr;
+}};

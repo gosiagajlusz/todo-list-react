@@ -1,11 +1,19 @@
-/* .buttons {
-    padding:0px;
-    display:flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-} */
 
-.buttons__button {
+.section__headerButtons {
+    align-items: center;    
+    background-color: transparent;
+    border: 0 transparent;
+    color: teal;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0 10px;
+    transition: .5s;
+}
+
+
+
+/* .buttons__button {
     border: none;
     padding: 5px 5px;
    min-height: 30px;  
@@ -15,14 +23,23 @@
     color: teal;
     font-size:18px;
     
-}
+} */
 
-.buttons__button:disabled{
+.section__headerButtons:disabled{
     color:grey;
 }
 
 
-.buttons__button:hover {
+.section__headerButtons:hover {
     color: rgb(116, 186, 186);
 
 }
+
+@media (max-width: 767px){
+.section__headerButtons {
+    grid-gap: 15px;
+    display: grid;
+    gap: 15px;
+    grid-template-columns: 1fr;
+    padding: 5px;
+}};

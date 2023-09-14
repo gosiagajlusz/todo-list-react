@@ -1,7 +1,10 @@
 
+.tasks {
+    list-style: none;
+    padding:20px;
+}
 
-
-    .tasks__item {
+.tasks__item {
         display: grid;
         grid-template-columns:auto 1fr auto ;
         grid-gap: 10px;   
@@ -10,23 +13,10 @@
         border-bottom: 1px solid rgb(198, 196, 196);
     
     }
-
     
-
-   
-
-.tasks__content{
-    text-decoration:none;
-}
-
-
     .tasks__content—done{
         text-decoration: line-through;
-    }
-
-    .tasks__button{
-
-    }
+    }    
 
     .tasks__button-toggleDone{
         background-color: green;
