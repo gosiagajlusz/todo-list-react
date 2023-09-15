@@ -3,9 +3,7 @@
     display:grid;
     padding: 0 10 px;
     grid-template-columns: 1fr auto;
-
 }
-
 
 .buttons__headerButtons__button {
     align-items: center;    
