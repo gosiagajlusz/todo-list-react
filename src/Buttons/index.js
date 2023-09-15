@@ -1,4 +1,3 @@
-import React from 'react';
 import "./style.css";
 
 const Buttons = ({ tasks, hideDoneTasks }) => (
@@ -18,10 +17,4 @@ const Buttons = ({ tasks, hideDoneTasks }) => (
     }
   </div>
 );
-
-
-
-
-
-
 export default Buttons;
