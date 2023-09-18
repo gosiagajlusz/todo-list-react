@@ -2,7 +2,7 @@ import "./style.css";
 const Form = () => (
     <form className="form">
 
-        <input className="form__input" placeholder="Co jest do zrobienia?" autofocus />
+        <input className="form__input" placeholder="Co jest do zrobienia?" autoFocus />
         <button className="form__addTaskButton">Dodaj zadanie</button>
 
     </form>
