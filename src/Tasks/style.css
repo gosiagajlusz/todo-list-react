@@ -67,4 +67,4 @@
     @media (max-width: 897px) {
         .tasks {
             grid-template-columns: 1fr;
-        }};
+        }}
