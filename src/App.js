@@ -48,6 +48,10 @@ function App() {
     }
   };
 
+  localStorage.setItem
+  ("tasks", JSON.stringify(tasks));
+
+
   return (
     <Container>
       <Header title="Lista zadań" />
