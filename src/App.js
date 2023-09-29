@@ -48,9 +48,11 @@ function App() {
     }
   };
 
-  localStorage.setItem
-  ("tasks", JSON.stringify(tasks));
+  localStorage.setItem("tasks", JSON.stringify(tasks));
 
+  //odczyt listy
+
+  // const tasks2 = JSON.parse(localStorage.getItem("tasks"));
 
   return (
     <Container>
