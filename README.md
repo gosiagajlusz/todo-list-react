@@ -1,5 +1,6 @@
 
 # to-do-list
+demo: https://gosiagajlusz.github.io/todo-list-react/
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -10,5 +11,3 @@ This is a mini app with a to do list to add tasks, mark them done,delete them an
 
 ![image](https://github.com/gosiagajlusz/todo-list-react/assets/105000058/9fa113ec-9302-4b75-be99-79df4d9b23d1)
 
-demo:
-https://gosiagajlusz.github.io/todo-list-react/
