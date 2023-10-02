@@ -7,8 +7,11 @@ html {
   box-sizing: inherit;
 }
 
-.main {
+body {
   background-color: #e8ebed;
+}
+
+.main {
   font-family: "Montserrat", sans-serif;
   word-break: break-word;
   max-width: 900px;
