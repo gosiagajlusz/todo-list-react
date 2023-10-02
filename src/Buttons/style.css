@@ -2,6 +2,7 @@
   display: grid;
   padding: 0 10px;
   grid-template-columns: 1fr auto;
+  border-style: none;
 }
 
 .buttons__button {
