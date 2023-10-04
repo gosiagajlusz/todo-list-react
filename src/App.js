@@ -8,7 +8,6 @@ import Container from "./Container";
 import { useEffect } from "react";
 
 function App() {
-
   const [hideDone, setHideDone] = useState(false);
 
   const [tasks, setTasks] = useState([
@@ -50,12 +49,10 @@ function App() {
     }
   };
 
-
-  useEffect(()=>{
+  useEffect(() => {
     localStorage.setItem("tasks", JSON.stringify(tasks));
     const tasks2 = JSON.parse(localStorage.getItem("tasks"));
-  }, [tasks]
-  )
+  }, [tasks]);
 
   return (
     <Container>
