@@ -10,10 +10,8 @@ import { useEffect } from "react";
 function App() {
   const [hideDone, setHideDone] = useState(false);
 
-  const [tasks, setTasks] = useState([
-    { id: 1, content: "przejść na reacta", done: true },
-    { id: 2, content: "50 min cardio", done: false },
-  ]);
+  const [tasks, setTasks] = useState(JSON.parse
+    (localStorage.getItem("tasks")) || []);
   const toggleHideDone = () => {
     setHideDone((hideDone) => !hideDone);
   };
@@ -49,9 +47,11 @@ function App() {
     }
   };
 
+
+
   useEffect(() => {
     localStorage.setItem("tasks", JSON.stringify(tasks));
-    const tasks2 = JSON.parse(localStorage.getItem("tasks"));
+    // const tasks2 = JSON.parse(localStorage.getItem("tasks"));
   }, [tasks]);
 
   return (
