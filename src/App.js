@@ -7,11 +7,6 @@ import Header from "./Header";
 import Container from "./Container";
 import { useEffect } from "react";
 // import { useRef } from "react";
-
-const getInitalTasks = () => {
-  const tasksFromLocalStorage = localStorage.getItem("tasks");
-};
-
 function App() {
   // const inputRef = useRef(null);
   // const focusInput = () => {
@@ -19,7 +14,9 @@ function App() {
   // };
   const [hideDone, setHideDone] = useState(false);
 
-  const [tasks, setTasks] = useState(getInitalTasks);
+  const [tasks, setTasks] = useState(
+    JSON.parse(localStorage.getItem("tasks")) || ""
+  );
 
   useEffect(() => {
     localStorage.setItem("tasks", JSON.stringify(tasks));
