@@ -13,6 +13,19 @@ function App() {
   //   inputRef.current.focus();
   // };
   const [hideDone, setHideDone] = useState(false);
+  const addNewTask = (newTaskContent) => {
+    const trimmedContent = newTaskContent.trim();
+    if (trimmedContent !== "") {
+      setTasks((tasks) => [
+        ...tasks,
+        {
+          content: newTaskContent,
+          done: false,
+          id: !tasks.legth ? tasks[tasks.length - 1].id + 1 : 1,
+        },
+      ]);
+    }
+  };
 
   const [tasks, setTasks] = useState(
     JSON.parse(localStorage.getItem("tasks")) || ""
@@ -44,19 +57,7 @@ function App() {
     setTasks((tasks) => tasks.map((task) => ({ ...task, done: true })));
   };
 
-  const addNewTask = (newTaskContent) => {
-    if (newTaskContent !== "") {
-      setTasks((tasks) => [
-        ...tasks,
-        {
-          content: newTaskContent,
-          done: false,
-          id: !tasks.legth ? tasks[tasks.length - 1].id + 1 : 1,
-        },
-      ]);
-    }
-  };
-
+  
   return (
     <Container>
       <Header title="Lista zadań" />
