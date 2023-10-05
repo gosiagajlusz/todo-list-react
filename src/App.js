@@ -6,12 +6,19 @@ import Section from "./Section";
 import Header from "./Header";
 import Container from "./Container";
 import { useEffect } from "react";
+import { useRef } from "react";
 
 function App() {
+  // const inputRef = useRef(null);
+  // const focusInput = () => {
+  //   inputRef.current.focus();
+  // };
+
   const [hideDone, setHideDone] = useState(false);
 
-  const [tasks, setTasks] = useState(JSON.parse
-    (localStorage.getItem("tasks")) || []);
+  const [tasks, setTasks] = useState(
+    JSON.parse(localStorage.getItem("tasks")) || []
+  );
   const toggleHideDone = () => {
     setHideDone((hideDone) => !hideDone);
   };
@@ -47,8 +54,6 @@ function App() {
     }
   };
 
-
-
   useEffect(() => {
     localStorage.setItem("tasks", JSON.stringify(tasks));
     // const tasks2 = JSON.parse(localStorage.getItem("tasks"));
@@ -60,7 +65,13 @@ function App() {
 
       <Section
         title="Dodaj nowe zadanie"
-        body={<Form addNewTask={addNewTask} />}
+        body={
+          <Form
+            addNewTask={addNewTask}
+            // inputRef={inputRef}
+            // focusInput={focusInput}
+          />
+        }
       />
       <Section
         title="Lista zadań"
