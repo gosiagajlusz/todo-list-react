@@ -6,19 +6,25 @@ import Section from "./Section";
 import Header from "./Header";
 import Container from "./Container";
 import { useEffect } from "react";
-import { useRef } from "react";
+// import { useRef } from "react";
+
+const getInitalTasks = () => {
+  const tasksFromLocalStorage = localStorage.getItem("tasks");
+};
 
 function App() {
   // const inputRef = useRef(null);
   // const focusInput = () => {
   //   inputRef.current.focus();
   // };
-
   const [hideDone, setHideDone] = useState(false);
 
-  const [tasks, setTasks] = useState(
-    JSON.parse(localStorage.getItem("tasks")) || []
-  );
+  const [tasks, setTasks] = useState(getInitalTasks);
+
+  useEffect(() => {
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+  }, [tasks]);
+
   const toggleHideDone = () => {
     setHideDone((hideDone) => !hideDone);
   };
@@ -53,11 +59,6 @@ function App() {
       ]);
     }
   };
-
-  useEffect(() => {
-    localStorage.setItem("tasks", JSON.stringify(tasks));
-    // const tasks2 = JSON.parse(localStorage.getItem("tasks"));
-  }, [tasks]);
 
   return (
     <Container>
