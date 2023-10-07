@@ -30,6 +30,11 @@
   border: 1px solid #ddd;
 }
 
+.form__input:focus{
+border:2px solid black;
+ ;}
+
+
 @media (max-width: 897px) {
   .form {
     grid-template-columns: 1fr;
