@@ -1,18 +1,20 @@
 import "./style.css";
 import { useState } from "react";
+import { useRef } from "react";
 
-const Form = ({ addNewTask, inputRef }) => {
+const Form = ({ addNewTask, inputRef, focusInput }) => {
   const [NewTaskContent, setNewTaskContent] = useState("");
   const onFormSubmit = (event) => {
     event.preventDefault();
     addNewTask(NewTaskContent.trim());
     setNewTaskContent("");
+    focusInput();
   };
 
   return (
     <form className="form" onSubmit={onFormSubmit}>
       <input
-        // ref={inputRef}
+        ref={inputRef}
         value={NewTaskContent}
         className="form__input"
         placeholder="Co jest do zrobienia?"
