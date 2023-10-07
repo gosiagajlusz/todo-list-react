@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Form from "./Form";
 import Tasks from "./Tasks";
 import Buttons from "./Buttons";
@@ -7,7 +7,6 @@ import Header from "./Header";
 import Container from "./Container";
 
 function App() {
-
   const exampleTasks = [
     { id: 1, content: "przejść na Reacta", done: false },
     { id: 2, content: "zrobić obiad", done: true },
@@ -18,14 +17,18 @@ function App() {
     JSON.parse(localStorage.getItem("tasks")) || exampleTasks
   );
 
+  const inputRef = useRef(null);
+  const focusInput= ()=> {
+    inputRef.current.focus();
+  }
+
   useEffect(() => {
     localStorage.setItem("tasks", JSON.stringify(tasks));
   }, [tasks]);
 
   const toggleHideDone = () => {
     setHideDone((hideDone) => !hideDone);
-  }; 
-
+  };
 
   const toggleTaskDone = (id) => {
     setTasks((tasks) =>
@@ -42,26 +45,8 @@ function App() {
     setTasks((tasks) => tasks.map((task) => ({ ...task, done: true })));
   };
 
-
-   
-  // const addNewTask = (newTaskContent) => {
-  //   const trimmedContent = newTaskContent.trim();
-  //   if (trimmedContent !== "") {
-  //     setTasks((tasks) => [
-  //       ...tasks,
-  //       {
-  //         content: newTaskContent,
-  //         done: false,
-  //         id: !tasks.legth ? tasks[tasks.length - 1].id + 1 : 1,
-  //       },
-  //     ]);
-  //   }
-  // };
-
-  
-
   const addNewTask = (content) => {
-    setTasks(tasks => [
+    setTasks((tasks) => [
       ...tasks,
       {
         content,
@@ -69,16 +54,12 @@ function App() {
         id: tasks.length === 0 ? 1 : tasks[tasks.length - 1].id + 1,
       },
     ]);
-  }
-  
+  };
+
   const removeTask = (id) => {
     setTasks((tasks) => tasks.filter((task) => task.id !== id));
   };
 
-
-  
-
-  
   return (
     <Container>
       <Header title="Lista zadań" />
@@ -88,8 +69,8 @@ function App() {
         body={
           <Form
             addNewTask={addNewTask}
-            // inputRef={inputRef}
-            // focusInput={focusInput}
+            inputRef={inputRef}
+            focusInput={focusInput}
           />
         }
       />
