@@ -1,34 +1,21 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Form from "./Form";
 import Tasks from "./Tasks";
 import Buttons from "./Buttons";
 import Section from "./Section";
 import Header from "./Header";
 import Container from "./Container";
-import { useEffect } from "react";
-// import { useRef } from "react";
-function App() {
-  // const inputRef = useRef(null);
-  // const focusInput = () => {
-  //   inputRef.current.focus();
-  // };
-  const [hideDone, setHideDone] = useState(false);
-  const addNewTask = (newTaskContent) => {
-    const trimmedContent = newTaskContent.trim();
-    if (trimmedContent !== "") {
-      setTasks((tasks) => [
-        ...tasks,
-        {
-          content: newTaskContent,
-          done: false,
-          id: !tasks.legth ? tasks[tasks.length - 1].id + 1 : 1,
-        },
-      ]);
-    }
-  };
 
+function App() {
+
+  const exampleTasks = [
+    { id: 1, content: "przejść na Reacta", done: false },
+    { id: 2, content: "zrobić obiad", done: true },
+  ];
+
+  const [hideDone, setHideDone] = useState(false);
   const [tasks, setTasks] = useState(
-    JSON.parse(localStorage.getItem("tasks")) || ""
+    JSON.parse(localStorage.getItem("tasks")) || exampleTasks
   );
 
   useEffect(() => {
@@ -37,10 +24,8 @@ function App() {
 
   const toggleHideDone = () => {
     setHideDone((hideDone) => !hideDone);
-  };
-  const removeTask = (id) => {
-    setTasks((tasks) => tasks.filter((task) => task.id !== id));
-  };
+  }; 
+
 
   const toggleTaskDone = (id) => {
     setTasks((tasks) =>
@@ -56,6 +41,42 @@ function App() {
   const setAllDone = () => {
     setTasks((tasks) => tasks.map((task) => ({ ...task, done: true })));
   };
+
+
+   
+  // const addNewTask = (newTaskContent) => {
+  //   const trimmedContent = newTaskContent.trim();
+  //   if (trimmedContent !== "") {
+  //     setTasks((tasks) => [
+  //       ...tasks,
+  //       {
+  //         content: newTaskContent,
+  //         done: false,
+  //         id: !tasks.legth ? tasks[tasks.length - 1].id + 1 : 1,
+  //       },
+  //     ]);
+  //   }
+  // };
+
+  
+
+  const addNewTask = (content) => {
+    setTasks(tasks => [
+      ...tasks,
+      {
+        content,
+        done: false,
+        id: tasks.length === 0 ? 1 : tasks[tasks.length - 1].id + 1,
+      },
+    ]);
+  }
+  
+  const removeTask = (id) => {
+    setTasks((tasks) => tasks.filter((task) => task.id !== id));
+  };
+
+
+  
 
   
   return (
