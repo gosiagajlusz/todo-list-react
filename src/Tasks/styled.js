@@ -7,6 +7,10 @@ export const List = styled.ul`
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: 20px;
+
+  @media (max-width: 897px) {
+    grid-template-columns: 1fr;
+  }
 `;
 
 export const Item = styled.li`
@@ -25,9 +29,39 @@ export const Item = styled.li`
 `;
 
 export const Content = styled.span`
-  ${({ done }) =>
-    done &&
+  ${({ $done }) =>
+    $done &&
     css`
       text-decoration: line-through;
+    `}
+`;
+
+export const Button = styled.button`
+  border-style: none;
+  color: white;
+  width: 30px;
+  height: 30px;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  grid-column-start: 1;
+  transition: background 0.5s 0.5s linear;
+
+  ${({ $toggleDone }) =>
+    $toggleDone &&
+    css`
+      background-color: green;
+      &:hover {
+        background-color: rgb(68, 125, 68);
+      }
+    `};
+
+  ${({ $remove }) =>
+    $remove &&
+    css`
+      background-color: red;
+      &:hover {
+        background-color: rgb(237, 125, 125);
+      }
     `}
 `;
