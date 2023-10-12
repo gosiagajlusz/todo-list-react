@@ -1,24 +1,6 @@
-.tasks {
-  list-style: none;
-  background-color: white;
-  padding: 20px;
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-gap: 20px;
-}
 
-.tasks__item {
-  display: grid;
-  grid-template-columns: auto 1fr auto;
-  grid-gap: 10px;
-  align-items: center;
-  padding: 10px;
-  border-bottom: 1px solid rgb(198, 196, 196);
-}
 
-.tasks__content-done {
-  text-decoration: line-through;
-}
+
 
 .tasks__button-toggleDone {
   background-color: green;
@@ -57,9 +39,7 @@
   background-color: rgb(237, 125, 125);
 }
 
-.tasks__hidden {
-  display: none;
-}
+
 
 @media (max-width: 897px) {
   .tasks {
