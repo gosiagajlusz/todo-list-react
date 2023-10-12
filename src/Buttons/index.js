@@ -9,7 +9,7 @@ const Buttons = ({ tasks, hideDone, toggleHideDone, setAllDone }) => (
         </button>
         <button
           className="buttons__button"
-          disabled={tasks.every(({ done }) => done)}
+          disabled={tasks.every(({ $done }) => $done)}
           onClick={setAllDone}
         >
           Ukończ wszystkie
