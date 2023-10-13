@@ -7,6 +7,7 @@ import Header from "./Header";
 import Container from "./Container";
 import { useTasks } from "./useTasks";
 import { ThemeProvider } from "styled-components";
+import { theme } from "./theme";
 
 function App() {
   const [hideDone, setHideDone] = useState(false);
@@ -24,7 +25,7 @@ function App() {
   };
 
   return (
-    <ThemeProvider>
+    <ThemeProvider theme={theme}>
     <Container>
       <Header title="Lista zadań" />
 
