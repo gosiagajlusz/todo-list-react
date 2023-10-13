@@ -6,6 +6,7 @@ import Section from "./Section";
 import Header from "./Header";
 import Container from "./Container";
 import { useTasks } from "./useTasks";
+import { ThemeProvider } from "styled-components";
 
 function App() {
   const [hideDone, setHideDone] = useState(false);
@@ -23,6 +24,7 @@ function App() {
   };
 
   return (
+    <ThemeProvider>
     <Container>
       <Header title="Lista zadań" />
 
@@ -57,6 +59,8 @@ function App() {
         }
       />
     </Container>
+    </ThemeProvider>
   );
 }
+
 export default App;
