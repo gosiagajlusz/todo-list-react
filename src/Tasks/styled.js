@@ -44,7 +44,6 @@ export const Button = styled.button`
   display: grid;
   justify-items: center;
   align-items: center;
-  grid-column-start: 1;
   transition: background 0.5s 0.5s linear;
 
   ${({ $toggleDone }) =>
