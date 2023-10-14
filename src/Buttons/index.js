@@ -1,4 +1,3 @@
-import "./style.css";
 import { ButtonsWrapper, Button } from "./styled";
 
 const Buttons = ({ tasks, hideDone, toggleHideDone, setAllDone }) => (
