@@ -16,22 +16,20 @@ export const FormInput = styled.input`
   padding: 10px;
   border: 1px solid #ddd;
 
-&:focus{
-border:2px solid black;
- }
-
+  &:focus {
+    border: 2px solid black;
+  }
 `;
 
 export const AddButton = styled.button`
-background-color: teal;
+  background-color: ${({ theme }) => theme.colors.primaryColor};
   color: white;
   padding: 10px;
   border: none;
   transition: 1s;
   flex-basis: 100%;
-&:hover {
-  background-color: rgb(98, 154, 154);
-  transform: scale(1.15);
-}
-
-`
+  &:hover {
+    background-color: rgb(98, 154, 154);
+    transform: scale(1.15);
+  }
+`;

@@ -8,6 +8,7 @@ import Container from "./Container";
 import { useTasks } from "./useTasks";
 import { ThemeProvider } from "styled-components";
 import { theme } from "./theme";
+import { GlobalStyle } from "./GlobalStyles";
 
 function App() {
   const [hideDone, setHideDone] = useState(false);
@@ -26,40 +27,41 @@ function App() {
 
   return (
     <ThemeProvider theme={theme}>
-    <Container>
-      <Header title="Lista zadań" />
+      <GlobalStyle />
+      <Container>
+        <Header title="Lista zadań" />
 
-      <Section
-        title="Dodaj nowe zadanie"
-        body={
-          <Form
-            addNewTask={addNewTask}
-            inputRef={inputRef}
-            focusInput={focusInput}
-          />
-        }
-      />
-      <Section
-        title="Lista zadań"
-        extraHeaderContent={
-          <Buttons
-            tasks={tasks}
-            hideDone={hideDone}
-            toggleHideDone={toggleHideDone}
-            setAllDone={setAllDone}
-          />
-        }
-        body={
-          <Tasks
-            tasks={tasks}
-            hideDone={hideDone}
-            removeTask={removeTask}
-            toggleTaskDone={toggleTaskDone}
-            useTasks={useTasks}
-          />
-        }
-      />
-    </Container>
+        <Section
+          title="Dodaj nowe zadanie"
+          body={
+            <Form
+              addNewTask={addNewTask}
+              inputRef={inputRef}
+              focusInput={focusInput}
+            />
+          }
+        />
+        <Section
+          title="Lista zadań"
+          extraHeaderContent={
+            <Buttons
+              tasks={tasks}
+              hideDone={hideDone}
+              toggleHideDone={toggleHideDone}
+              setAllDone={setAllDone}
+            />
+          }
+          body={
+            <Tasks
+              tasks={tasks}
+              hideDone={hideDone}
+              removeTask={removeTask}
+              toggleTaskDone={toggleTaskDone}
+              useTasks={useTasks}
+            />
+          }
+        />
+      </Container>
     </ThemeProvider>
   );
 }

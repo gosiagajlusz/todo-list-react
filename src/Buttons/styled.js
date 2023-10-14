@@ -18,7 +18,7 @@ export const Button = styled.button`
   align-items: center;
   background-color: transparent;
   border: 0 transparent;
-  color: teal;
+  color: ${({ theme }) => theme.colors.primaryColor};
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -30,7 +30,5 @@ export const Button = styled.button`
 
   &:disabled {
     color: grey;
-
-    //media queries dodac poprzez theme z osobnego pliku, wyeksportowac go ale gdzie go importowac ?
   }
 `;
