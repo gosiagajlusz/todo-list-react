@@ -4,6 +4,14 @@ export const ButtonsWrapper = styled.div`
   display: grid;
   grid-template-columns: 1fr auto;
   border-style: none;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
+    grid-gap: 15px;
+    display: grid;
+    grid-gap: 15px;
+    grid-template-columns: 1fr;
+    padding: 5px;
+  }
 `;
 
 export const Button = styled.button`
@@ -21,11 +29,8 @@ export const Button = styled.button`
   }
 
   &:disabled {
-  color: grey;
+    color: grey;
 
-//media queries dodac poprzez theme z osobnego pliku, wyeksportowac go ale gdzie go importowac ?
-
-}
-
+    //media queries dodac poprzez theme z osobnego pliku, wyeksportowac go ale gdzie go importowac ?
+  }
 `;
-

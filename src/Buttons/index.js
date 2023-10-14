@@ -5,7 +5,7 @@ const Buttons = ({ tasks, hideDone, toggleHideDone, setAllDone }) => (
   <ButtonsWrapper>
     {tasks.length > 0 && (
       <>
-        <Button onClick={toggleHideDone}>
+        <Button  onClick={toggleHideDone}>
           {hideDone ? "Pokaż" : "Ukryj"} ukończone
         </Button>
         <Button
