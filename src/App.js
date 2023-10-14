@@ -8,7 +8,7 @@ import Container from "./Container";
 import { useTasks } from "./useTasks";
 import { ThemeProvider } from "styled-components";
 import { theme } from "./theme";
-import { GlobalStyle } from "./GlobalStyles";
+import { GlobalStyle } from "./globalStyles";
 
 function App() {
   const [hideDone, setHideDone] = useState(false);
