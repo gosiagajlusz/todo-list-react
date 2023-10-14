@@ -1,4 +1,3 @@
-import "./style.css";
 import { useState } from "react";
 import { useRef } from "react";
 import { FormWrapper, FormInput, AddButton } from "./styled";
