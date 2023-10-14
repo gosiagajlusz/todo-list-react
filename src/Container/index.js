@@ -1,4 +1,3 @@
-import "./style.css";
 import { Main } from "./styled";
 
 const Container = ({ children }) => <Main>{children}</Main>;
