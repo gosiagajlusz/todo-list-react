@@ -14,7 +14,7 @@ export const Header = styled.header`
   justify-content: space-between;
   align-items: center;
 
-  @media (max-width: 767px) {
+  @media (max-width:${({theme})=>theme.breakpoints.mobile}px) {
     grid-gap: 10px;
     grid-template-columns: 1fr;
   }
