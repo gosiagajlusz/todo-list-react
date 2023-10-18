@@ -9,7 +9,6 @@ const getInitialState = () => {
 export const useTasks = () => {
   const [tasks, setTasks] = useState(getInitialState);
 
-  //jak to sie wywoluje jak nie jest luzem w app.js?
   useEffect(() => {
     localStorage.setItem("tasks", JSON.stringify(tasks));
   }, [tasks]);
