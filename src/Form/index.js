@@ -3,10 +3,10 @@ import { useRef } from "react";
 import { FormWrapper, FormInput, AddButton } from "./styled";
 
 const Form = ({ addNewTask }) => {
-  const [NewTaskContent, setNewTaskContent] = useState("");
+  const [newTaskContent, setNewTaskContent] = useState("");
   const onFormSubmit = (event) => {
     event.preventDefault();
-    addNewTask(NewTaskContent.trim());
+    addNewTask(newTaskContent.trim());
     setNewTaskContent("");
     focusInput();
   };
@@ -19,7 +19,7 @@ const Form = ({ addNewTask }) => {
     <FormWrapper onSubmit={onFormSubmit}>
       <FormInput
         ref={inputRef}
-        value={NewTaskContent}
+        value={newTaskContent}
         placeholder="Co jest do zrobienia?"
         onChange={(event) => setNewTaskContent(event.target.value)}
       />
