@@ -10,6 +10,7 @@ import { ThemeProvider } from "styled-components";
 import { theme } from "./theme";
 import { GlobalStyle } from "./globalStyles";
 
+
 function App() {
   const {
     tasks,
@@ -24,7 +25,7 @@ function App() {
 
   return (
     <ThemeProvider theme={theme}>
-      <GlobalStyle />
+      <GlobalStyle/>
       <Container>
         <Header title="Lista zadań" />
 
