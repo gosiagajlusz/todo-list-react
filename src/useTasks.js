@@ -7,6 +7,12 @@ const getInitialState = () => {
 };
 
 export const useTasks = () => {
+  const [hideDone, setHideDone] = useState(false);
+
+  const toggleHideDone = () => {
+    setHideDone((hideDone) => !hideDone);
+  };
+
   const [tasks, setTasks] = useState(getInitialState);
 
   useEffect(() => {
@@ -42,5 +48,14 @@ export const useTasks = () => {
       },
     ]);
   };
-  return { tasks, removeTask, toggleTaskDone, setAllDone, addNewTask };
+  return {
+    tasks,
+    removeTask,
+    toggleTaskDone,
+    setAllDone,
+    addNewTask,
+    hideDone,
+    setHideDone,
+    toggleHideDone,
+  };
 };

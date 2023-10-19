@@ -11,19 +11,16 @@ import { theme } from "./theme";
 import { GlobalStyle } from "./globalStyles";
 
 function App() {
-  const [hideDone, setHideDone] = useState(false);
-
-  const toggleHideDone = () => {
-    setHideDone((hideDone) => !hideDone);
-  };
-
-  const { tasks, removeTask, toggleTaskDone, setAllDone, addNewTask } =
-    useTasks();
-
-  const inputRef = useRef(null);
-  const focusInput = () => {
-    inputRef.current.focus();
-  };
+  const {
+    tasks,
+    removeTask,
+    toggleTaskDone,
+    setAllDone,
+    addNewTask,
+    setHideDone,
+    hideDone,
+    toggleHideDone,
+  } = useTasks();
 
   return (
     <ThemeProvider theme={theme}>
@@ -33,13 +30,7 @@ function App() {
 
         <Section
           title="Dodaj nowe zadanie"
-          body={
-            <Form
-              addNewTask={addNewTask}
-              inputRef={inputRef}
-              focusInput={focusInput}
-            />
-          }
+          body={<Form addNewTask={addNewTask} />}
         />
         <Section
           title="Lista zadań"
