@@ -7,20 +7,39 @@ import { configureStore } from "@reduxjs/toolkit";
 
 const initialState= {tasks:[],};
 
-const reducer = (state=initialState,action)=>{
+const tasksReducer = (state = initialState, action)=>{
 if (action.type==="addTask"){
   return {
     ...state,
-    tasks:[]
+    tasks:[
+      ...state.tasks,
+      {content:action.payload},
+    ]
   };
   }
+  return state;
 };
 
+const addTaskAction= {
+  type:"addTask",
+  payload: "Nauczyć się całego reduxa",
+}
 
+const addTask = content => ({
+  type: "addTask",
+  payload: content,
+})
 
+const selectTasks = state => state.tasks;
 
+const store = configureStore({reducer:tasksReducer});
+console.log(selectTasks(store.getState()));
 
+store.dispatch(addTask("kanapka"));
+console.log(store.getState());
 
+store.dispatch(addTask("kanapka2"));
+console.log(store.getState());
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
