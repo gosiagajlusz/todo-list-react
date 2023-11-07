@@ -1,50 +1,53 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import { Provider } from "react-redux";
 import reportWebVitals from "./reportWebVitals";
 import { configureStore } from "@reduxjs/toolkit";
 import { App } from "./App";
+import store from "./store";
 
+// const initialState= {tasks:[],};
 
-const initialState= {tasks:[],};
+// const tasksReducer = (state = initialState, action)=>{
+// if (action.type==="addTask"){
+//   return {
+//     ...state,
+//     tasks:[
+//       ...state.tasks,
+//       {content:action.payload},
+//     ]
+//   };
+//   }
+//   return state;
+// };
 
-const tasksReducer = (state = initialState, action)=>{
-if (action.type==="addTask"){
-  return {
-    ...state,
-    tasks:[
-      ...state.tasks,
-      {content:action.payload},
-    ]
-  };
-  }
-  return state;
-};
+// const addTaskAction= {
+//   type:"addTask",
+//   payload: "Nauczyć się całego reduxa",
+// }
 
-const addTaskAction= {
-  type:"addTask",
-  payload: "Nauczyć się całego reduxa",
-}
+// const addTask = content => ({
+//   type: "addTask",
+//   payload: content,
+// })
 
-const addTask = content => ({
-  type: "addTask",
-  payload: content,
-})
+// const selectTasks = state => state.tasks;
 
-const selectTasks = state => state.tasks;
+// const store = configureStore({reducer:tasksReducer});
+// console.log(selectTasks(store.getState()));
 
-const store = configureStore({reducer:tasksReducer});
-console.log(selectTasks(store.getState()));
+// store.dispatch(addTask("kanapka"));
+// console.log(store.getState());
 
-store.dispatch(addTask("kanapka"));
-console.log(store.getState());
-
-store.dispatch(addTask("kanapka2"));
-console.log(store.getState());
+// store.dispatch(addTask("kanapka2"));
+// console.log(store.getState());
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <App />
+    <Provider store={store}>
+      <App />
+    </Provider>
   </React.StrictMode>
 );
 
