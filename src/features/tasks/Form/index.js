@@ -14,9 +14,11 @@ const Form = () => {
   const onFormSubmit = (event) => {
     event.preventDefault();
     const trimmedNewTaskContent = newTaskContent.trim();
-    dispatch(
-      addTask({ content: trimmedNewTaskContent, done: false, id: nanoid() })
-    );
+    if (trimmedNewTaskContent !== "") {
+      dispatch(
+        addTask({ content: trimmedNewTaskContent, done: false, id: nanoid() })
+      );
+    }
     setNewTaskContent("");
     focusInput();
   };
