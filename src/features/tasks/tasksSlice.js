@@ -4,7 +4,7 @@ const tasksSlice = createSlice({
   name: "tasks",
   initialState: {
     tasks: [
-        {content:'console', done:true,}
+        {content:'przejść na reduxa', done:true,}
     ],
     hideDone:false,
   },
@@ -15,14 +15,21 @@ const tasksSlice = createSlice({
     },
     toggleHideDone:state=>{
         state.hideDone= !state.hideDone;
-    }
+    },
+    toggleTaskDone:(state, action)=>{
+      const index = state.tasks.findIndex(task=>task.id===action.payload);
+       state.tasks[index].done= !state.tasks[index].done; 
+      },
+removeTask: (state, action)=>{
+  const index = state.tasks.findIndex(task=>task.id===action.payload);
+  state.tasks.splice(index, 1);
+}
+
   },
+
 });
 
-export const { addTask, toggleHideDone } = tasksSlice.actions;
+export const { addTask, toggleHideDone, toggleTaskDone, removeTask } = tasksSlice.actions;
 export const selectTasks = (state) => state.tasks;
 export default tasksSlice.reducer;
 
-console.log(
-  tasksSlice.reducer({ tasks: [] }, addTask({ content: "trololo", done: true }))
-);
