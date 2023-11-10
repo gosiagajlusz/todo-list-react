@@ -9,10 +9,10 @@ import Header from "../../common/Header";
 import Container from "../../common/Container";
 import { theme } from "../../theme";
 import { GlobalStyle } from "../../globalStyles";
-import { selectTasks } from "./tasksSlice";
+import { selectTasksState } from "./tasksSlice";
 
 function Tasks() {
-  const { tasks } = useSelector(selectTasks);
+  const { tasks } = useSelector(selectTasksState);
 
   return (
     <ThemeProvider theme={theme}>
