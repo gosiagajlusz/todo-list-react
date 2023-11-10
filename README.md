@@ -3,6 +3,7 @@
 demo: https://gosiagajlusz.github.io/todo-list-react/
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Technologies used in project: JavaScript, React, Redux. 
 
 
 This is a mini app with a to do list to add tasks, mark them done,delete them and hide done tasks. 
