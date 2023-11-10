@@ -49,8 +49,8 @@ const {tasks} = useSelector(selectTasks);
             <TasksList
               // tasks={tasks}
               // hideDone={hideDone}
-              removeTask={removeTask}
-              toggleTaskDone={toggleTaskDone}
+              // removeTask={removeTask}
+              // toggleTaskDone={toggleTaskDone}
               useTasks={useTasks}
             />
           }
