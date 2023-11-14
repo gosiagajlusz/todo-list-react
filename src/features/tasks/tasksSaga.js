@@ -13,5 +13,5 @@ export function* fetchExampleTasksHandler(){
 
 export function* watchFetchExampleTasks() {
     console.log("Saga działa! :)")
-    yield takeEvery(fetchExampleTasks.type)
+    yield takeEvery(fetchExampleTasks.type, fetchExampleTasksHandler)
 }
