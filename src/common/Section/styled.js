@@ -26,6 +26,4 @@ padding: 10px;
 `
 
 export const Body = styled.div`
-//czy to ma sens? trzymam diva dla grida, moze powinien być tylowany tutaj, 
-//ale skoro działa,wygląda ok to czy jest sens zmieniać?
 `
