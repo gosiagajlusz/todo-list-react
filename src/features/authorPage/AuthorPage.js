@@ -6,7 +6,7 @@ import { GlobalStyle } from "../../globalStyles"
 import { ThemeProvider } from "styled-components";
 
 
-export const Author = ()=>(
+export const AuthorPage = ()=>(
     <ThemeProvider theme={theme}>
     <Container>
         <Header title="O autorze"/>
