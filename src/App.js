@@ -4,8 +4,6 @@ import TaskPage from "./features/tasks/TaskPage"
 import { AuthorPage } from "./features/authorPage/AuthorPage";
 
 
-
-
 export const App = ()=>(
     <HashRouter>
     <nav>
@@ -22,6 +20,9 @@ export const App = ()=>(
             </li>
             </ul>
             <Switch>
+                <Route path="/zadania">
+                    <TasksPage></TasksPage>
+                </Route>
                 <Route path="/zadania/:id">
                 <TaskPage/>
                 </Route>
