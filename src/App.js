@@ -4,9 +4,14 @@ import TaskPage from "./features/tasks/TaskPage"
 import { AuthorPage } from "./features/authorPage/AuthorPage";
 import { StyledNavLink } from "./styled";
 import { NavList } from "./styled";
-
+import { ThemeProvider } from "styled-components";
+import { theme } from "./theme";
+import { GlobalStyle } from "./globalStyles";
 
 export const App = ()=>(
+    <ThemeProvider theme={theme}>
+              <GlobalStyle />
+
     <HashRouter>
     <nav>
         <NavList>
@@ -36,4 +41,5 @@ export const App = ()=>(
                 </Route>
             </Switch>
     </nav>
-    </HashRouter>);
+    </HashRouter>
+    </ThemeProvider>);
