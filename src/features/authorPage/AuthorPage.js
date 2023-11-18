@@ -18,7 +18,11 @@ export const AuthorPage = ()=>(
             aplikacji i stron
             internetowych.<br>
             </br>Dążę do tego, żeby aplikacje
-             mojego autorstwa były estetyczne i przyjemne w użytkowaniu.</Paragraph></>
+             mojego autorstwa były estetyczne i przyjemne w użytkowaniu.
+             <br>
+             </br>
+             Moje pasje to gotowanie, fitness i architektura wnętrz.
+             </Paragraph></>
         }
         />
     </Container>
