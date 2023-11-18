@@ -11,7 +11,6 @@ import { GlobalStyle } from "./globalStyles";
 export const App = () => (
   <ThemeProvider theme={theme}>
     <GlobalStyle />
-
     <HashRouter>
       <nav>
         <NavList>

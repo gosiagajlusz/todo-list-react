@@ -10,7 +10,7 @@ import { getTaskById } from "../tasksSlice";
 
 function TaskPage() {
   const { id } = useParams();
-  const task = useSelector((state) => getTaskById(state, id));
+  const task = useSelector(state => getTaskById(state, id));
 
   return (
     <ThemeProvider theme={theme}>
