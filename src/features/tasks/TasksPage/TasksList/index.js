@@ -11,9 +11,11 @@ import searchQueryParamName from "../searchQueryParamName";
 
 const TasksList = () => {
   const location = useLocation();
-  const query = new URLSearchParams(location.search).get(searchQueryParamName);
-  const dispatch = useDispatch();
+  const searchParams = new URLSearchParams(location.search);
+  const query = searchParams.get(searchQueryParamName);
   const tasks = useSelector((state) => selectTaskByQuery(state, query));
+
+  const dispatch = useDispatch();
   const { hideDone } = useSelector(selectHideDone);
 
   return (
