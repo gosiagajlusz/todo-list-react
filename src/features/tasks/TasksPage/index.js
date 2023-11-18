@@ -20,9 +20,8 @@ function TasksPage() {
       <GlobalStyle />
       <Container>
         <Header title="Lista zadań" />
-
-        <Section title="Dodaj nowe zadanie" body={<Form />} />
-        <Section title="wyszukiwarka" body={<Search />} />
+        <Section title="Dodaj nowe zadanie"  body={<Form />} />
+        <Section title="Wyszukiwarka" body={<Search />} />
 
         <Section
           title="Lista zadań"

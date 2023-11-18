@@ -22,6 +22,5 @@ export const NavList = styled.ul`
   font-size: 20px;
   font-weight: 300;
   font-family: "Montserrat", sans-serif;
-  max-width: 840px;
   margin:0 auto;
 `;
