@@ -21,9 +21,9 @@ export const App = ()=>(
                 </StyledNavLink>
             </li>
             <li>
-                <Link to="/autor">
+                <StyledNavLink to="/autor">
                 O autorze
-                </Link>
+                </StyledNavLink>
             </li>
             </NavList>
             <Switch>
