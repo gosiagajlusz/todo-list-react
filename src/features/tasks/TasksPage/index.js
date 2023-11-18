@@ -11,16 +11,30 @@ import { theme } from "../../../theme";
 import { GlobalStyle } from "../../../globalStyles";
 import { selectTasksState } from "../tasksSlice";
 import { Search } from "./Search";
+import { DownloadButton } from "./Button";
+import { useDispatch } from "react-redux";
+import { fetchExampleTasks } from "../tasksSlice";
+import {useLocation} from "react-router-dom"
 
 function TasksPage() {
   // const { tasks } = useSelector(selectTasksState);
+  const dispatch = useDispatch();
+  const location = useLocation();
 
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
       <Container>
         <Header title="Lista zadań" />
-        <Section title="Dodaj nowe zadanie"  body={<Form />} />
+        <Section
+          title="Dodaj nowe zadanie"
+          extraHeaderContent={
+            <DownloadButton onClick={() => dispatch(fetchExampleTasks())}>
+              Pobierz przykładowe zadania
+            </DownloadButton>
+          }
+          body={<Form />}
+        />
         <Section title="Wyszukiwarka" body={<Search />} />
 
         <Section
