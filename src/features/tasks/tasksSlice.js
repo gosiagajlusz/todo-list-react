@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { getTasksFromLocalStorage, getHideDoneStateFromLocalStorage } from "./tasksLocalStorage";
+import { getTasksFromLocalStorage,getHideDoneStateFromLocalStorage
+    } from "./tasksLocalStorage";
 
 const tasksSlice = createSlice({
   name: "tasks",
@@ -45,9 +46,9 @@ export const {
   setTasks,
 } = tasksSlice.actions;
 
-export const selectTasksState = (state) => state.tasks;
-export const selectTasks = (state) => selectTasksState(state).tasks;
-export const selectHideDone = (state) => selectTasksState(state).hideDone;
+export const selectTasksState = state => state.tasks;
+export const selectTasks = state => selectTasksState(state).tasks;
+export const selectHideDone = state => selectTasksState(state).hideDone;
 
 export const getTaskById = (state,taskId)=>
 selectTasks(state).find(({id})=> id === taskId);
@@ -58,9 +59,8 @@ export const selectTaskByQuery = (state, query)=>
   {if (!query || query.trim()===""){
   return tasks;
 }
-return selectTasks(state).filter(({content})=>
+return tasks.filter(({content})=>
 content.toUpperCase().includes(query.trim().toUpperCase));
-
 }};
 
 export default tasksSlice.reducer;
