@@ -1,6 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { getTasksFromLocalStorage,getHideDoneStateFromLocalStorage
-    } from "./tasksLocalStorage";
+import {
+  getTasksFromLocalStorage,
+  getHideDoneStateFromLocalStorage,
+} from "./tasksLocalStorage";
 
 const tasksSlice = createSlice({
   name: "tasks",
@@ -29,18 +31,16 @@ const tasksSlice = createSlice({
         task.done = true;
       }
     },
-    fetchExampleTasks: state => {
+    fetchExampleTasks: (state) => {
       state.loading = true;
     },
     fetchExampleTasksSuccess: (state, { payload: tasks }) => {
       state.tasks = tasks;
       state.loading = false;
     },
-    fetchExampleTasksError: state => {
+    fetchExampleTasksError: (state) => {
       state.loading = false;
     },
-
-    
   },
 });
 
@@ -56,22 +56,25 @@ export const {
   setTasks,
 } = tasksSlice.actions;
 
-export const selectTasksState = state => state.tasks;
-export const selectTasks = state => selectTasksState(state).tasks;
-export const selectHideDone = state => selectTasksState(state).hideDone;
+export const selectTasksState = (state) => state.tasks;
+export const selectTasks = (state) => selectTasksState(state).tasks;
+export const selectHideDone = (state) => selectTasksState(state).hideDone;
 
-export const getTaskById = (state,taskId)=>
-selectTasks(state).find(({id})=> id === taskId);
+export const getTaskById = (state, taskId) =>
+  selectTasks(state).find(({ id }) => id === taskId);
+export const selectLoadingTasks = (state) => selectTasksState(state).loading;
 
-export const selectTaskByQuery = (state, query)=>
-{const tasks = selectTasks(state);
-  
-  {if (!query || query.trim()===""){
-  return tasks;
-}
-return tasks.filter(({content})=>
-content.toUpperCase().includes(query.trim().toUpperCase()));
-}};
+export const selectTaskByQuery = (state, query) => {
+  const tasks = selectTasks(state);
+
+  {
+    if (!query || query.trim() === "") {
+      return tasks;
+    }
+    return tasks.filter(({ content }) =>
+      content.toUpperCase().includes(query.trim().toUpperCase())
+    );
+  }
+};
 
 export default tasksSlice.reducer;
-
