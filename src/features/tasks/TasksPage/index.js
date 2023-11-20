@@ -13,9 +13,12 @@ import { DownloadButton } from "./Button";
 import { useDispatch } from "react-redux";
 import { fetchExampleTasks } from "../tasksSlice";
 import { useLocation } from "react-router-dom";
+import { selectLoadingTasks } from "../tasksSlice";
+import { useSelector } from "react-redux";
 
 function TasksPage() {
   const dispatch = useDispatch();
+  const loading = useSelector(selectLoadingTasks);
   const location = useLocation();
 
   return (
@@ -26,8 +29,8 @@ function TasksPage() {
         <Section
           title="Dodaj nowe zadanie"
           extraHeaderContent={
-            <DownloadButton onClick={() => dispatch(fetchExampleTasks())}>
-              Pobierz przykładowe zadania
+            <DownloadButton disable={loading} onClick={() => dispatch(fetchExampleTasks())}>
+              {loading ? "Ładowanie... " : "Pobierz przykładowe zadania"}
             </DownloadButton>
           }
           body={<Form />}
