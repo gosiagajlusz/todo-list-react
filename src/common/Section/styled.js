@@ -6,7 +6,6 @@ export const Wrapper = styled.section`
   box-shadow: 1px 1px rgb(185, 183, 183);
 `;
 export const Header = styled.header`
-  padding: 20px;
   border-bottom: 1px solid #ddd;
   display: grid;
   grid-gap: 20px;
@@ -14,16 +13,15 @@ export const Header = styled.header`
   justify-content: space-between;
   align-items: center;
 
-  @media (max-width:${({theme})=>theme.breakpoints.mobile}px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
     grid-gap: 10px;
     grid-template-columns: 1fr;
   }
 `;
 
 export const Title = styled.h2`
-padding: 10px;
+  padding: 10px;
   margin: 0;
-`
+`;
 
-export const Body = styled.div`
-`
+export const Body = styled.div``;
