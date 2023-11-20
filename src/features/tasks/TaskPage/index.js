@@ -7,6 +7,7 @@ import Container from "../../../common/Container";
 import { theme } from "../../../theme";
 import { GlobalStyle } from "../../../globalStyles";
 import { getTaskById } from "../tasksSlice";
+import { Paragraph } from "./styled";
 
 function TaskPage() {
   const { id } = useParams();
